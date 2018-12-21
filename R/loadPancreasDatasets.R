@@ -18,6 +18,8 @@
 #' @importFrom ExperimentHub ExperimentHub
 #' @importFrom AnnotationHub query
 #' @importFrom stats complete.cases sd quantile
+#' @importClassesFrom SummarizedExperiment SummarizedExperiment
+#' @importMethodsFrom SummarizedExperiment assay assays assayNames colData rowData
 #' @examples
 #'
 #' experimentsAndDups = loadPancreasDatasets()
