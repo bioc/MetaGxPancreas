@@ -18,6 +18,7 @@
 #' @importFrom ExperimentHub ExperimentHub
 #' @importFrom AnnotationHub query
 #' @importFrom stats complete.cases sd quantile
+# @import SummarizedExperiment
 #' @importClassesFrom SummarizedExperiment SummarizedExperiment
 #' @importMethodsFrom SummarizedExperiment assay assays assayNames colData rowData
 #' @examples
