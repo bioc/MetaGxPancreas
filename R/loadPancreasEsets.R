@@ -31,8 +31,8 @@ loadPancreasEsets = function(removeDuplicates = TRUE, quantileCutoff = 0, rescal
   filterQuantile <- function(object, q){
     if (!identical(q >=0 && q < 1, TRUE))
       stop("require 0 <= q < 1")
-    if (!identical(class(object) == "ExpressionSet", TRUE))
-      stop("object must be an ExpressionSet")
+    #if (!identical(class(object) == "ExpressionSet", TRUE))
+    #  stop("object must be an ExpressionSet")
     geneSd <- Biobase::esApply(object,1,sd, na.rm=TRUE)
     gene.quantile <- stats::quantile(geneSd, probs=q)
     actual.makescutoff <- sum(geneSd < gene.quantile) / length(geneSd)
