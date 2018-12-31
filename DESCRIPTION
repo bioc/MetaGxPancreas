@@ -10,7 +10,7 @@ License: Artistic-2.0
 Depends: Biobase, stats, lattice, impute, AnnotationHub, ExperimentHub, SummarizedExperiment, R (>= 3.5.0)
 Suggests: testthat, xtable
 NeedsCompilation: no
-biocViews: ExpressionData, ExperimentHub, CancerData, Homo_sapiens_Data, ArrayExpress, GEO, NCI, MicroarrayData, ExperimentData, SummarizedExperiment
+biocViews: ExpressionData, ExperimentHub, CancerData, Homo_sapiens_Data, ArrayExpress, GEO, NCI, MicroarrayData, ExperimentData
 LazyData: yes
 Packaged: 2018-03-12 20:33:41 UTC; Michael Zon
 RoxygenNote: 6.1.1
