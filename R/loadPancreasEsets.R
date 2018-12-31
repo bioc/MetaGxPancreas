@@ -13,13 +13,6 @@
 #' @return a list with 2 elements. The First element named esets contains the datasets. The second element named duplicates contains
 #' a vector with patient IDs for the duplicate patients (those with  Spearman correlation greater than or equal to 0.98 with other patient expression profiles).
 #' @export
-#' @importFrom Biobase esApply featureNames sampleNames exprs pData experimentData
-#' @importFrom lattice levelplot
-#' @importFrom impute impute.knn
-#' @importFrom Biobase ExpressionSet
-#' @importFrom ExperimentHub ExperimentHub
-#' @importFrom AnnotationHub query
-#' @importFrom stats complete.cases sd quantile
 #' @examples
 #'
 #' esetsAndDups = loadPancreasEsets()
@@ -30,6 +23,7 @@ loadPancreasEsets = function(removeDuplicates = TRUE, quantileCutoff = 0, rescal
                             keepCommonOnly = FALSE, imputeMissing = FALSE)
 {
   duplicates = NULL
+  #added SummarizedExperiment to description and removed imports from loadPancEsets function
   #if(getRversion() >= "2.15.1")  utils::globalVariables(c("."), add = F)
   ## -----------------------------------------------------------------------------
   ## needed functions
@@ -84,10 +78,10 @@ loadPancreasEsets = function(removeDuplicates = TRUE, quantileCutoff = 0, rescal
   pancreasData = query(hub, c("MetaGxPancreas", "ExpressionSet"))
   esets = lapply(pancreasData, function(x) x[[names(x)]])
   names(esets) = pancreasData$title
-  
+
   if(removeSeqSubset == TRUE)
     esets$ICGCSEQ = NULL
-  
+
   ## -----------------------------------------------------------------------------
   ##Explicit removal of samples from specified datasets:
   ## -----------------------------------------------------------------------------
@@ -147,9 +141,9 @@ loadPancreasEsets = function(removeDuplicates = TRUE, quantileCutoff = 0, rescal
       }
       #Biobase::exprs(eset) <- Biobase::exprs(eset)[, keepix, drop=FALSE]
       #Biobase::pData(eset) <- Biobase::pData(eset)[keepix, , drop=FALSE]
-      
+
     }
-    
+
     message("including experiment hub dataset ",pancreasData[i]$title)
     ##    featureNames(eset) <- make.names(featureNames(eset))  ##should not do this, it is irreversible.
     esets[[i]] <- eset

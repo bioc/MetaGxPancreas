@@ -12,15 +12,15 @@
 #' @return a list with 2 elements. The First element named summarizedExperiments contains the datasets. The second element named duplicates contains
 #' a vector with patient IDs for the duplicate patients (those with  Spearman correlation greater than or equal to 0.98 with other patient expression profiles).
 #' @export
-#' @importFrom Biobase esApply featureNames sampleNames exprs pData experimentData
+#' @importFrom Biobase esApply featureNames sampleNames exprs pData experimentData ExpressionSet
 #' @importFrom lattice levelplot
 #' @importFrom impute impute.knn
 #' @importFrom ExperimentHub ExperimentHub
 #' @importFrom AnnotationHub query
 #' @importFrom stats complete.cases sd quantile
-# @import SummarizedExperiment
-#' @importClassesFrom SummarizedExperiment SummarizedExperiment
-#' @importMethodsFrom SummarizedExperiment assay assays assayNames colData rowData
+#' @import SummarizedExperiment
+#' @importFrom SummarizedExperiment SummarizedExperiment
+#' @importFrom SummarizedExperiment assay assays assayNames colData rowData
 #' @examples
 #'
 #' experimentsAndDups = loadPancreasDatasets()
