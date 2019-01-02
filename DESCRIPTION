@@ -1,13 +1,13 @@
 Package: MetaGxPancreas
 Type: Package
 Title: Transcriptomic Pancreatic Cancer Datasets
-Version: 0.99.5
+Version: 1.3.0
 Date: 2015-11-11
 Author: Michael Zon <michaelzon7@gmail.com>, Vandana Sandhu  <vsandhu1987@gmail.com>, Benjamin Haibe-Kains <benjamin.haibe.kains@utoronto.ca>
 Maintainer: Michael Zon <michaelzon7@gmail.com>
 Description: A collection of pancreatic Cancer transcriptomic datasets that are part of the MetaGxData package compendium. 
 License: Artistic-2.0
-Depends: Biobase, stats, lattice, impute, AnnotationHub, ExperimentHub, SummarizedExperiment, R (>= 3.5.0)
+Depends: Biobase, stats, lattice, impute, AnnotationHub, ExperimentHub, R (>= 3.5.0)
 Suggests: testthat, xtable
 NeedsCompilation: no
 biocViews: ExpressionData, ExperimentHub, CancerData, Homo_sapiens_Data, ArrayExpress, GEO, NCI, MicroarrayData, ExperimentData
