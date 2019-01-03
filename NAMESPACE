@@ -2,7 +2,6 @@
 
 export(loadPancreasDatasets)
 export(loadPancreasEsets)
-import(SummarizedExperiment)
 importFrom(AnnotationHub,query)
 importFrom(Biobase,ExpressionSet)
 importFrom(Biobase,esApply)
