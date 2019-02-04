@@ -18,8 +18,7 @@
 #' @importFrom ExperimentHub ExperimentHub
 #' @importFrom AnnotationHub query
 #' @importFrom stats complete.cases sd quantile
-#' @importFrom SummarizedExperiment SummarizedExperiment
-#' @importFrom SummarizedExperiment assay assays assayNames colData rowData
+#' @importFrom SummarizedExperiment SummarizedExperiment assays assayNames colData rowData
 #' @examples
 #'
 #' experimentsAndDups = loadPancreasDatasets()
@@ -91,14 +90,14 @@ loadPancreasDatasets = function(removeSeqSubset = TRUE, rescale = FALSE, minNumb
 
     ##rescale to z-scores
     if(rescale == TRUE){
-      assay(data) = t(scale(t(assay(data))))
+      SummarizedExperiment::assay(data) = t(scale(t(SummarizedExperiment::assay(data))))
     }
 
     if(removeDuplicates == TRUE){
-      keepix <- setdiff(colnames(assay(data)), rmix)
-      if(length(keepix) != length(colnames(assay(data))))
+      keepix <- setdiff(colnames(SummarizedExperiment::assay(data)), rmix)
+      if(length(keepix) != length(colnames(SummarizedExperiment::assay(data))))
       {
-        keepix = which(!colnames(assay(data)) %in% rmix)
+        keepix = which(!colnames(SummarizedExperiment::assay(data)) %in% rmix)
         data = data[ ,keepix]
       }
     }
@@ -126,7 +125,7 @@ loadPancreasDatasets = function(removeSeqSubset = TRUE, rescale = FALSE, minNumb
     }
 
     if(imputeMissing == TRUE){
-      notNaInds = which(colSums(is.na(assay(data))) == 0)
+      notNaInds = which(colSums(is.na(SummarizedExperiment::assay(data))) == 0)
       data = data[, notNaInds]
       if(length(notNaInds) == 0){
         message(paste("excluding experiment hub dataset",names(dataList)[i],
