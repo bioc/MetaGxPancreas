@@ -7,7 +7,7 @@ Author: Michael Zon <michaelzon7@gmail.com>, Vandana Sandhu  <vsandhu1987@gmail.
 Maintainer: Michael Zon <michaelzon7@gmail.com>
 Description: A collection of pancreatic Cancer transcriptomic datasets that are part of the MetaGxData package compendium. 
 License: Artistic-2.0
-Depends: Biobase, stats, lattice, impute, AnnotationHub, ExperimentHub, R (>= 3.5.0)
+Depends: Biobase, stats, lattice, impute, AnnotationHub, ExperimentHub, R (>= 3.6.0)
 Imports:  SummarizedExperiment
 Suggests: testthat, xtable
 NeedsCompilation: no
