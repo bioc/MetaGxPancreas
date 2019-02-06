@@ -71,7 +71,7 @@ loadPancreasDatasets = function(removeSeqSubset = TRUE, rescale = FALSE, minNumb
   ## same as used in metagx getbrcadata
   #load("inst\\extdata\\BenDuplicate.rda")
   #source(system.file("extdata", "patientselection.config", package="MetaGxOvarian"))
-  load(system.file("extdata", "duplicates.rda", package="MetaGxPancreas"))
+  load(system.file("extdata", "duplicates.Rda", package="MetaGxPancreas"))
 
   rmix <- duplicates
   ii <- 1
