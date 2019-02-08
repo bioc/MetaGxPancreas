@@ -44,8 +44,9 @@ This survival information is available for 11 of the 15 datasets.
 
 To install the MetaGxPancreas package from Bioconductor:
 <<install-pkg,eval=FALSE>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite("MetaGxPancreas")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("MetaGxPancreas")
 @
 
 %------------------------------------------------------------
