@@ -1,7 +1,7 @@
 Package: MetaGxPancreas
 Type: Package
 Title: Transcriptomic Pancreatic Cancer Datasets
-Version: 1.8.0
+Version: 1.9.0
 Date: 2015-11-11
 Author: Michael Zon <michaelzon7@gmail.com>, Vandana Sandhu  <vsandhu1987@gmail.com>, Benjamin Haibe-Kains <benjamin.haibe.kains@utoronto.ca>
 Maintainer: Michael Zon <michaelzon7@gmail.com>
