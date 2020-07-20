@@ -8,7 +8,7 @@
 An expresion set object containing pancreatic cancer data
 }
 \format{
-    eSet object
+    SummarizedExperiment object
 }
 \details{
     more details can be found in the experimentData section of the object

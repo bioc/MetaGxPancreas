@@ -1,18 +1,18 @@
 ## validate with `AnnotationHub::readMetadataFromCsv("TENxBrainData")`
 ## (above pkg directory)
 
-infoString = c("BADEA", "BALAGURANATH" ,"CHEN", "COLLISON", "GRUTZMANN", "ICGCSEQ", "ICGCMICRO",
+infoString = c("BADEA", "BALAGURANATHAN" ,"CHEN", "COLLISSON", "GRUTZMANN", "ICGCSEQ", "ICGCMICRO",
                "KIRBY", "OUH", "PCSI", "PEI", "TCGA",
                "UNC", "WINTER", "ZHANG", "HAMIDI","YANG", "LUNARDI", "JANKY", "BAUER", "HAIDER")
 
 
 main.data <- data.frame(
-  Title = c("BADEA", "BALAGURANATH" ,"CHEN", "COLLISON", "GRUTZMANN", "ICGCSEQ", "ICGCMICRO",
+  Title = c("BADEA", "BALAGURANATHAN" ,"CHEN", "COLLISSON", "GRUTZMANN", "ICGCSEQ", "ICGCMICRO",
             "KIRBY", "OUH", "PCSI", "PEI", "TCGA",
             "UNC", "WINTER", "ZHANG", "HAMIDI","YANG", "LUNARDI", "JANKY", "BAUER", "HAIDER"
   ),
   Description = paste(
-    "Pancreas cancer  gene expression data ",
+    "Pancreas cancer gene expression data ",
     c(
       "used in, Badea et al, Hepatogastroenterology 2008",
       "used in Balagurunathan et al, Mol Cancer Ther 2008",
@@ -38,13 +38,13 @@ main.data <- data.frame(
     )
   ),
   RDataPath = c(
-    "MetaGxPancreas/BADEA.rda", "MetaGxPancreas/BALAGURANATH.rda", "MetaGxPancreas/CHEN.rda",
-    "MetaGxPancreas/COLLISON.rda", "MetaGxPancreas/GRUTZMANN.rda", "MetaGxPancreas/ICGCSEQ.rda",
-    "MetaGxPancreas/ICGCMICRO.rda", "MetaGxPancreas/KIRBY.rda", "MetaGxPancreas/OUH.rda",
-    "MetaGxPancreas/PCSI.rda", "MetaGxPancreas/PEI.rda", "MetaGxPancreas/TCGA.rda",
-    "MetaGxPancreas/UNC.rda", "MetaGxPancreas/WINTER.rda", "MetaGxPancreas/ZHANG.rda",
-    "MetaGxPancreas/HAMIDI.rda","MetaGxPancreas/YANG.rda", "MetaGxPancreas/LUNARDI.rda", 
-    "MetaGxPancreas/JANKY.rda", "MetaGxPancreas/BAUER.rda", "MetaGxPancreas/HAIDER.rda"
+    "MetaGxPancreas/BADEA.rds", "MetaGxPancreas/BALAGURANATHAN.rds", "MetaGxPancreas/CHEN.rds",
+    "MetaGxPancreas/COLLISSON.rds", "MetaGxPancreas/GRUTZMANN.rds", "MetaGxPancreas/ICGCSEQ.rds",
+    "MetaGxPancreas/ICGCMICRO.rds", "MetaGxPancreas/KIRBY.rds", "MetaGxPancreas/OUH.rds",
+    "MetaGxPancreas/PCSI.rds", "MetaGxPancreas/PEI.rds", "MetaGxPancreas/TCGA.rds",
+    "MetaGxPancreas/UNC.rds", "MetaGxPancreas/WINTER.rds", "MetaGxPancreas/ZHANG.rds",
+    "MetaGxPancreas/HAMIDI.rds","MetaGxPancreas/YANG.rds", "MetaGxPancreas/LUNARDI.rds", 
+    "MetaGxPancreas/JANKY.rds", "MetaGxPancreas/BAUER.rds", "MetaGxPancreas/HAIDER.rds"
   ),
   BiocVersion="3.7",
   Genome=c("Affymetrix Human Genome U133 Plus 2.0 Array", "Human 1A Microarray G4110A-G4110B", "Affymetrix,Rosetta-Merck RSTA Custom 2.0", "Affymetrix, array U133 Plus 2.0","Affymetrix GeneChip Human Genome HG-U133B",
@@ -64,15 +64,15 @@ main.data <- data.frame(
               "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62452", "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE55643",
               "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62165", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-1791/",
               "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56560"),
-  SourceVersion="July 09 2018",
+  SourceVersion="July 09 2020",
   Species="Homo sapien",
   TaxonomyId=9606,
   Coordinate_1_based=FALSE,
   DataProvider=c(rep("GEO", 4), "Array Express", rep("ICGC", 2), rep("GEO", 2), "Private", "GEO", "GDC", "GEO", "Array Express", "GEO", rep("GEO", 4), "Array Express", "GEO"),
   Maintainer="Michael Zon <michaelzon7@gmail.com>",
-  RDataClass="ExpressionSet",
-  DispatchClass="Rda",
-  Tags = "breast cancer expression",
+  RDataClass="SummarizedExperiment",
+  DispatchClass="RDS",
+  Tags = "Pancreatic cancer expression",
   ResourceName = c(paste0(infoString, ".rda"))
 )
 
