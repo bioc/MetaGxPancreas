@@ -1,0 +1,86 @@
+---
+title: 'MetaGxPancreas: A Package for Pancreatic Cancer Gene Expression Analysis'
+
+author:
+- name: Michael Zon
+  affiliation:
+    - &mbp Department of Medical Biophysics, University of Toronto, Toronto, Canada
+- name: Vandana Sandhu
+  affiliation: *mbp
+- name: Benjamin Haibe-Kains
+  email: benjamin.haibe.kains@utoronto.ca
+  affiliation:
+      - *mbp
+      - &pm Bioinformatics and Computational Genomics Laboratory, Princess Margaret Cancer Center, University Health Network, Toronto, Ontario, Canada
+
+output: BiocStyle::pdf_document
+
+vignette: >
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteIndexEntry{MetaGxPancreas: A Package for Pancreatic Cancer Gene Expression Analysis}
+---
+
+## Installing the Package
+
+The MetaGxPancreas package is a compendium of Pancreatic Cancer datasets.
+The package is publicly available and can be installed from Bioconductor into R 
+version 3.6.0 or higher. Currently, the phenoData for the datasets is overall 
+survival status and overall survival time. This survival information is 
+available for 11 of the 15 datasets.
+
+```{r installation, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("MetaGxPancreas")
+```
+
+## Loading Datasets
+
+First we load the MetaGxPancreas package into the workspace.
+
+```{r load}
+library(MetaGxPancreas)
+
+pancreasData <- loadPancreasDatasets()
+duplicates <- pancreasData$duplicates
+SEs <- pancreasData$SEs
+```
+
+This will load 15 expression datasets. Users can modify the parameters of the function to restrict datasets that do not
+meet certain criteria for loading. Some example parameters are shown below:
+
+  - removeDuplicates: remove patients with a Spearman correlation greater than or equal to 0.98 with other patient expression
+  profiles (default TRUE)
+  - quantileCutoff: A numeric between 0 and 1 specifying to remove genes with standard deviation below the required
+  quantile (default 0)
+  - rescale: apply centering and scaling to the expression sets (default FALSE)
+  - minNumberGenes: an integer specifying to remove expression sets with less genes than this number (default 0)
+  - minSampleSize: an integer specifying the minimum number of patients required in an SE (default 0)
+  - minNumberEvents: an integer specifying how man survival events must be in the dataset to keep the dataset (default 0)
+  - removeSeqSubset currently only removes the ICGSSEQ dataset as it contains the same patients as the ICGS microarray
+  dataset (defeault TRUE, currently just ICGSSEQ)
+  - keepCommonOnly remove probes not common to all datasets (default FALSE)
+  - imputeMissing impute missing expression value via knn
+
+## Obtaining Sample Counts in Datasets
+
+To obtain the number of samples per dataset, run the following:
+
+```{r sample_size}
+numSamples <- vapply(SEs, function(SE) length(colnames(SE)), FUN.VALUE=numeric(1))
+
+sampleNumberByDataset <- data.frame(numSamples=numSamples,
+                                    row.names=names(SEs))
+
+totalNumSamples <- sum(sampleNumberByDataset$numSamples)
+sampleNumberByDataset <- rbind(sampleNumberByDataset, totalNumSamples)
+rownames(sampleNumberByDataset)[nrow(sampleNumberByDataset)] <- 'Total'
+
+knitr::kable(sampleNumberByDataset)
+```
+
+## SessionInfo
+
+```{r sessionInfo}
+sessionInfo()
+```
