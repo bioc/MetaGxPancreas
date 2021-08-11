@@ -19,8 +19,8 @@ Description: A collection of pancreatic Cancer transcriptomic datasets that are
 License: Artistic-2.0
 Encoding: UTF-8
 Depends: SummarizedExperiment, ExperimentHub, R (>= 3.6.0)
-Imports: stats, impute, S4Vectors, AnnotationHub, markdown
-Suggests: testthat, knitr, BiocStyle, rmarkdown
+Imports: stats, impute, S4Vectors, AnnotationHub
+Suggests: testthat, knitr, BiocStyle, rmarkdown, markdown
 VignetteBuilder: knitr
 biocViews: ExpressionData, ExperimentHub, CancerData, Homo_sapiens_Data, 
     ArrayExpress, GEO, NCI, MicroarrayData, ExperimentData, SequencingData
