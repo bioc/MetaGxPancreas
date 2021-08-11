@@ -1,11 +1,13 @@
 Package: MetaGxPancreas
 Title: Transcriptomic Pancreatic Cancer Datasets
-Version: 1.13.1
+Version: 1.13.2
 Authors@R: c(
-    person("Michael", "Zon", role=c("aut", "cre"), 
+    person("Michael", "Zon", role=c("aut"), 
         email='michaelzon7@gmail.com'), 
     person('Vandana', 'Sandhu', role=c("aut"), email='vsandhu1987@gmail.com'),
-    person('Benjamin', 'Haibe-Kains', role=c("aut"),
+    person('Christopher', 'Eeles', role=c('ctb'), 
+        email='christopher.eeles@uhnresearch.ca'),
+    person('Benjamin', 'Haibe-Kains', role=c("aut", "cre"),
         email='benjamin.haibe.kains@utoronto.ca'))
 Description: A collection of pancreatic Cancer transcriptomic datasets that are     
     part of the MetaGxData package compendium. This package contains multiple 
@@ -17,7 +19,7 @@ Description: A collection of pancreatic Cancer transcriptomic datasets that are
 License: Artistic-2.0
 Encoding: UTF-8
 Depends: SummarizedExperiment, ExperimentHub, R (>= 3.6.0)
-Imports: stats, impute, S4Vectors, AnnotationHub
+Imports: stats, impute, S4Vectors, AnnotationHub, markdown
 Suggests: testthat, knitr, BiocStyle, rmarkdown
 VignetteBuilder: knitr
 biocViews: ExpressionData, ExperimentHub, CancerData, Homo_sapiens_Data, 
