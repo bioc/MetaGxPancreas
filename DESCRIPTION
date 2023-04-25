@@ -1,6 +1,6 @@
 Package: MetaGxPancreas
 Title: Transcriptomic Pancreatic Cancer Datasets
-Version: 1.20.0
+Version: 1.21.0
 Authors@R: c(
     person("Michael", "Zon", role=c("aut"), 
         email='michaelzon7@gmail.com'), 
