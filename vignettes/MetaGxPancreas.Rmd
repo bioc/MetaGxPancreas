@@ -3,20 +3,19 @@ title: 'MetaGxPancreas: A Package for Pancreatic Cancer Gene Expression Analysis
 
 author:
 - name: Michael Zon
-  affiliation:
-    - &mbp Department of Medical Biophysics, University of Toronto, Toronto, Canada
+  affiliation: &mbp Department of Medical Biophysics, University of Toronto, Toronto, Canada
 - name: Vandana Sandhu
   affiliation: *mbp
 - name: Benjamin Haibe-Kains
   email: benjamin.haibe.kains@utoronto.ca
   affiliation:
-      - *mbp
-      - &pm Bioinformatics and Computational Genomics Laboratory, Princess Margaret Cancer Center, University Health Network, Toronto, Ontario, Canada
-
-output: BiocStyle::pdf_document
-
+    - *mbp
+    - Bioinformatics and Computational Genomics Laboratory, Princess Margaret Cancer Center, University Health Network, Toronto, Ontario, Canada
+output: 
+  BiocStyle::html_document:
+    toc: false
 vignette: >
-  %\VignetteEngine{knitr::knitr}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{MetaGxPancreas: A Package for Pancreatic Cancer Gene Expression Analysis}
 ---
 
