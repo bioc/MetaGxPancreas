@@ -7,6 +7,8 @@ Authors@R: c(
     person('Vandana', 'Sandhu', role=c("aut"), email='vsandhu1987@gmail.com'),
     person('Christopher', 'Eeles', role=c('ctb'), 
         email='christopher.eeles@uhnresearch.ca'),
+    person('Michael', 'Cao-Anh', 'Tran', role=c('ctb'), 
+        email='michaelcao-anh.tran@uhn.ca'),
     person('Benjamin', 'Haibe-Kains', role=c("aut", "cre"),
         email='benjamin.haibe.kains@utoronto.ca'))
 Description: A collection of pancreatic Cancer transcriptomic datasets that are     
