@@ -28,8 +28,9 @@ survival status and overall survival time. This survival information is
 available for 11 of the 15 datasets.
 
 ```{r installation, eval=FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
 BiocManager::install("MetaGxPancreas")
 ```
 
@@ -70,10 +71,16 @@ meet certain criteria for loading. Some example parameters are shown below:
 To obtain the number of samples per dataset, run the following:
 
 ```{r sample_size}
-numSamples <- vapply(SEs, function(SE) length(colnames(SE)), FUN.VALUE=numeric(1))
+numSamples <- vapply(
+  SEs,
+  function(SE) length(colnames(SE)),
+  FUN.VALUE = numeric(1)
+)
 
-sampleNumberByDataset <- data.frame(numSamples=numSamples,
-                                    row.names=names(SEs))
+sampleNumberByDataset <- data.frame(
+  numSamples = numSamples,
+  row.names = names(SEs)
+)
 
 totalNumSamples <- sum(sampleNumberByDataset$numSamples)
 sampleNumberByDataset <- rbind(sampleNumberByDataset, totalNumSamples)
