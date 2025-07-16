@@ -3,20 +3,19 @@ title: 'MetaGxPancreas: A Package for Pancreatic Cancer Gene Expression Analysis
 
 author:
 - name: Michael Zon
-  affiliation:
-    - &mbp Department of Medical Biophysics, University of Toronto, Toronto, Canada
+  affiliation: &mbp Department of Medical Biophysics, University of Toronto, Toronto, Canada
 - name: Vandana Sandhu
   affiliation: *mbp
 - name: Benjamin Haibe-Kains
   email: benjamin.haibe.kains@utoronto.ca
   affiliation:
-      - *mbp
-      - &pm Bioinformatics and Computational Genomics Laboratory, Princess Margaret Cancer Center, University Health Network, Toronto, Ontario, Canada
-
-output: BiocStyle::pdf_document
-
+    - *mbp
+    - Bioinformatics and Computational Genomics Laboratory, Princess Margaret Cancer Center, University Health Network, Toronto, Ontario, Canada
+output: 
+  BiocStyle::html_document:
+    toc: false
 vignette: >
-  %\VignetteEngine{knitr::knitr}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{MetaGxPancreas: A Package for Pancreatic Cancer Gene Expression Analysis}
 ---
 
@@ -29,8 +28,9 @@ survival status and overall survival time. This survival information is
 available for 11 of the 15 datasets.
 
 ```{r installation, eval=FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
 BiocManager::install("MetaGxPancreas")
 ```
 
@@ -40,10 +40,14 @@ First we load the MetaGxPancreas package into the workspace.
 
 ```{r load}
 library(MetaGxPancreas)
+```
 
+Then we load the datasets.
+
+```{r load_datasets}
 pancreasData <- loadPancreasDatasets()
 duplicates <- pancreasData$duplicates
-SEs <- pancreasData$SEs
+SEs <- pancreasData$SummarizedExperiments
 ```
 
 This will load 15 expression datasets. Users can modify the parameters of the function to restrict datasets that do not
@@ -67,10 +71,16 @@ meet certain criteria for loading. Some example parameters are shown below:
 To obtain the number of samples per dataset, run the following:
 
 ```{r sample_size}
-numSamples <- vapply(SEs, function(SE) length(colnames(SE)), FUN.VALUE=numeric(1))
+numSamples <- vapply(
+  SEs,
+  function(SE) length(colnames(SE)),
+  FUN.VALUE = numeric(1)
+)
 
-sampleNumberByDataset <- data.frame(numSamples=numSamples,
-                                    row.names=names(SEs))
+sampleNumberByDataset <- data.frame(
+  numSamples = numSamples,
+  row.names = names(SEs)
+)
 
 totalNumSamples <- sum(sampleNumberByDataset$numSamples)
 sampleNumberByDataset <- rbind(sampleNumberByDataset, totalNumSamples)
